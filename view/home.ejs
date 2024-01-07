@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keycloak</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keycloak</title>
 </head>
 <body>
-  <h1>Home</h1>
-  <%
-  try {
-    if (user) {
-  %>
-        <p>Bonjour <%= user.name %></p>
-  <% } else { %>
-        <p>Please login</p>
-  <% }
-    } catch (err) {
-        console.log(err);
-    }
-    %>
+<h1>Home</h1>
+<% try {
+if (user) { %>
+    <p>Bonjour <%= user.name %></p>
+
+    <button onclick="redirectToUE('/UE/UE1')">UE1</button>
+    <button onclick="redirectToUE('/UE/UE2')">UE2</button>
+    <button onclick="redirectToUE('/UE/UE3')">UE3</button>
+
+<% } else { %>
+    <p>Please login</p>
+<% }
+} catch (err) {
+    console.log(err);
+}
+%>
+
+<script>
+  function redirectToUE(url) {
+    window.location.href = url;
+  }
+</script>
 </body>
 </html>
