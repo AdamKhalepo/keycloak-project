@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keycloak</title>
+</head>
+<body>
+<% try {
+if (UE) { %>
+    <p><%= UE.id %></p>
+
+    <button onclick=valider('<%= UE.id %>')>Valider</button>
+    <button onclick=ecrire('<%= UE.id %>')>Ecrire</button>
+
+<% } else { %>
+    <p>Please login</p>
+<% }
+} catch (err) {
+    console.log(err);
+}
+%>
+
+<script>
+  function valider(UE) {
+    fetch(`${UE}/valider`, {
+      method: 'POST',
+    }).then(res => {
+      if (res.status === 200) {
+        console.log('ok')
+      }
+    })
+  }
+
+  function ecrire(UE) {
+    fetch(`${UE}/ecrire`, {
+      method: 'POST',
+    })
+  }
+</script>
+</body>
+</html>
