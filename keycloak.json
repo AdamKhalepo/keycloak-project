@@ -1,11 +1,11 @@
 {
-  "realm": "my-product",
+  "realm": "projet-rbac",
   "auth-server-url": "http://localhost:8080/",
   "ssl-required": "external",
-  "resource": "my-application",
+  "resource": "app",
   "verify-token-audience": true,
   "credentials": {
-    "secret": "auErxiQoVYpOBd04qEFitZfwmI5GLHCS"
+    "secret": "**********"
   },
   "confidential-port": 0,
   "policy-enforcer": {
