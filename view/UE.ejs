@@ -28,6 +28,10 @@ if (UE) { %>
     }).then(res => {
       if (res.status === 200) {
         console.log('ok')
+        window.alert('Validation possible')
+      } else {
+        console.log('error')
+        window.alert('Validation impossible (vérifiez vos droits)')
       }
     })
   }
@@ -35,6 +39,14 @@ if (UE) { %>
   function ecrire(UE) {
     fetch(`${UE}/ecrire`, {
       method: 'POST',
+    }).then(res => {
+      if (res.status === 200) {
+        console.log('ok')
+        window.alert('Validation possible')
+      } else {
+        console.log('error')
+        window.alert('Validation impossible (vérifiez vos droits)')
+      }
     })
   }
 </script>
